@@ -61,28 +61,28 @@ proj.ios_mac/build/*
 #.LSOverride#
 
 # Generated files in the Android project #
-proj.android/libs/armeabi/*
-proj.android/libs/armeabi-v7a/*
-proj.android/libs/x86/*
-proj.android/obj/*
+src/proj.android/libs/armeabi/*
+src/proj.android/libs/armeabi-v7a/*
+src/proj.android/libs/x86/*
+src/proj.android/obj/*
 
-proj.android/build/
-proj.android/gen/*
-proj.android/bin/*
-proj.android/assets/*
+src/proj.android/build/
+src/proj.android/gen/*
+src/proj.android/bin/*
+src/proj.android/assets/*
 
 .gradle/*
-proj.android/.gradle/*
-proj.android/.idea/*
-proj.android/*.iml
-proj.android/local.properties
+src/proj.android/.gradle/*
+src/proj.android/.idea/*
+src/proj.android/*.iml
+src/proj.android/local.properties
 
-proj.android/libraries/*/build/
-proj.android/libraries/*/gen/*
-proj.android/libraries/*/bin/*
-proj.android/libraries/*/.idea/*
-proj.android/libraries/*/*.iml
-proj.android/libraries/*/local.properties
+src/proj.android/libraries/*/build/
+src/proj.android/libraries/*/gen/*
+src/proj.android/libraries/*/bin/*
+src/proj.android/libraries/*/.idea/*
+src/proj.android/libraries/*/*.iml
+src/proj.android/libraries/*/local.properties
 
 
 *.apk
@@ -91,5 +91,10 @@ proj.android/libraries/*/local.properties
 ######################
 docs/html/*
 
+
+#LTS - Debug folder
+src/proj.win32/.vs/*
+src/proj.win32/engine/*
+src/proj.win32/lib/Debug/*
 
 */.idea/*
