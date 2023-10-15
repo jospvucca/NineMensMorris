@@ -15,14 +15,14 @@ bool BackgroundLayer::init() {
 
 
 	//Load the background texture
-	auto texture = Director::getInstance()->getTextureCache()->addImage("Texture/backgroundTexture.png");
+	Texture2D* texture = Director::getInstance()->getTextureCache()->addImage("Texture/backgroundTexture.png");
 	if (texture == NULL) {
 		//handle exception
 		return false;
 	}
 
 	//Create sprite with texture
-	auto backgroundSprite = Sprite::createWithTexture(texture);
+	Sprite* backgroundSprite = Sprite::createWithTexture(texture);
 	if (!backgroundSprite) {
 		//handle exception
 		return false;
