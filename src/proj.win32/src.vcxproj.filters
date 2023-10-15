@@ -13,6 +13,9 @@
     <ClCompile Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="BackgroundLayer.cpp">
+      <Filter>Source Files\Classes\Background</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\AppDelegate.h">
@@ -45,6 +48,9 @@
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
+    <ClInclude Include="BackgroundLayer.h">
+      <Filter>Source Files\Classes\Background</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\CMakeLists.txt" />
@@ -73,5 +79,16 @@
     <Filter Include="Source Files\proj.win32">
       <UniqueIdentifier>{E08B0C57-AF98-3630-919D-DC7102FD24ED}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes\Background">
+      <UniqueIdentifier>{54c3963e-23ff-453c-92a5-ebbb80680296}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Textures">
+      <UniqueIdentifier>{3d2e5582-1917-4ac4-97b0-441e841cf571}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="backgroundTexture.png">
+      <Filter>Resources\Textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>
