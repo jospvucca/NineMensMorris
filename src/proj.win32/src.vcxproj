@@ -809,6 +809,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MainScene.cpp" />
     <ClInclude Include="BackgroundLayer.h" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\AppDelegate.h" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\HelloWorldScene.h" />
@@ -818,6 +819,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\AppDelegate.cpp" />
     <ClCompile Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\proj.win32\main.cpp" />
+    <ClInclude Include="MainScene.h" />
     <ResourceCompile Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\proj.win32\game.rc" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Resources\CloseNormal.png" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Resources\CloseSelected.png" />

@@ -16,6 +16,9 @@
     <ClCompile Include="BackgroundLayer.cpp">
       <Filter>Source Files\Classes\Background</Filter>
     </ClCompile>
+    <ClCompile Include="MainScene.cpp">
+      <Filter>Source Files\Classes\Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\AppDelegate.h">
@@ -51,6 +54,9 @@
     <ClInclude Include="BackgroundLayer.h">
       <Filter>Source Files\Classes\Background</Filter>
     </ClInclude>
+    <ClInclude Include="MainScene.h">
+      <Filter>Source Files\Classes\Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\CMakeLists.txt" />
@@ -84,6 +90,9 @@
     </Filter>
     <Filter Include="Resources\Textures">
       <UniqueIdentifier>{3d2e5582-1917-4ac4-97b0-441e841cf571}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Scenes">
+      <UniqueIdentifier>{b9375341-3fe4-49c5-838f-54ede59ea38f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

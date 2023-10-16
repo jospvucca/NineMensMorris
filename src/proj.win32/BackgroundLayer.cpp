@@ -15,7 +15,11 @@ bool BackgroundLayer::init() {
 
 
 	//Load the background texture
-	Texture2D* texture = Director::getInstance()->getTextureCache()->addImage("Texture/backgroundTexture.png");
+	std::string fullPath = FileUtils::getInstance()->fullPathForFilename("../Resources/Textures/backgroundTexture.png");
+	cocos2d::log(("Path: " + fullPath).c_str());
+
+	FileUtils::getInstance()->addSearchPath("Texture");
+	Texture2D* texture = Director::getInstance()->getTextureCache()->addImage("backgroundTexture.png");
 	if (texture == NULL) {
 		//handle exception
 		return false;
