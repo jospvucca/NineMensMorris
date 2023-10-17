@@ -13,12 +13,12 @@ bool BackgroundLayer::init() {
 		return false;
 	}
 
-
 	//Load the background texture
-	std::string fullPath = FileUtils::getInstance()->fullPathForFilename("../Resources/Textures/backgroundTexture.png");
-	cocos2d::log(("Path: " + fullPath).c_str());
+	//TODO: clean coding, this might be suitable for a seperate class, to decide later
+	std::vector<std::string> searchPaths = FileUtils::getInstance()->getSearchPaths();
+	searchPaths.insert(searchPaths.begin(), "textures");
+	FileUtils::getInstance()->setSearchPaths(searchPaths);
 
-	FileUtils::getInstance()->addSearchPath("Texture");
 	Texture2D* texture = Director::getInstance()->getTextureCache()->addImage("backgroundTexture.png");
 	if (texture == NULL) {
 		//handle exception
@@ -33,8 +33,11 @@ bool BackgroundLayer::init() {
 	}
 
 	//Position the sprite in the center of the screen
-	backgroundSprite->setPosition(Vec2(Director::getInstance()->getVisibleSize().width / 2,
-		Director::getInstance()->getVisibleSize().height / 2));
+	backgroundSprite->setPosition(Vec2((Director::getInstance()->getVisibleSize().width / 2),
+		(Director::getInstance()->getVisibleSize().height / 2)));
+
+	backgroundSprite->setScale(Director::getInstance()->getVisibleSize().width / backgroundSprite->getContentSize().width,
+		Director::getInstance()->getVisibleSize().height / backgroundSprite->getContentSize().height);
 
 	//Add the background sprite to this layer
 	this->addChild(backgroundSprite);

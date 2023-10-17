@@ -88,16 +88,16 @@
     <Filter Include="Source Files\Classes\Background">
       <UniqueIdentifier>{54c3963e-23ff-453c-92a5-ebbb80680296}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resources\Textures">
-      <UniqueIdentifier>{3d2e5582-1917-4ac4-97b0-441e841cf571}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Classes\Scenes">
       <UniqueIdentifier>{b9375341-3fe4-49c5-838f-54ede59ea38f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\textures">
+      <UniqueIdentifier>{0873bb9c-929d-42b6-831e-aada6cb703a5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <Image Include="backgroundTexture.png">
-      <Filter>Resources\Textures</Filter>
+    <Image Include="bin\src\Debug\Resources\textures\backgroundTexture.png">
+      <Filter>Resources\textures</Filter>
     </Image>
   </ItemGroup>
 </Project>
