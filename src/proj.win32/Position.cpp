@@ -1,5 +1,7 @@
 #include "Position.h"
 
+Position::Position(Intersections intersections) : intersections(intersections) { }
+
 Position::Position(const Size& playgroundSize, int numRows, int numCols) :
 	intersections(playgroundSize, numRows, numCols) { }
 

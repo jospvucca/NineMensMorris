@@ -8,7 +8,8 @@ using namespace cocos2d;
 
 class Position {
 public:
-	Position();
+	Position(Intersections intersections);
+	Position(const Size& playgroundSize, int numRows, int numCols);
 	Sprite* createCircleSprite(const Color3B& color, float radius);
 	
 private:
