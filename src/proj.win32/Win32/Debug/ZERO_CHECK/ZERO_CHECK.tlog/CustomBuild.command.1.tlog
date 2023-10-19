@@ -1,0 +1,10 @@
+^C:\USERS\JV\DOCUMENTS\COCOS\PROJECTS\NINEMENSMORRIS\SRC\PROJ.WIN32\CMAKEFILES\63A6AF7D3677050D1DA3BF4F77CBCC7A\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/JV/Documents/Cocos/Projects/NineMensMorris/src -BC:/Users/JV/Documents/Cocos/Projects/NineMensMorris/src/proj.win32 --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/JV/Documents/Cocos/Projects/NineMensMorris/src/proj.win32/src.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

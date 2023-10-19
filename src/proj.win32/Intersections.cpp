@@ -7,7 +7,7 @@ Intersections::Intersections(const Size& playgroundSize, int numRows, int numCol
 }
 
 Vec2 Intersections::getIntersectionPosition(int row, int column) {
-	float x = intersectionSpacingX * column;
-	float y = intersectionSpacingY * row;
+	float x = intersectionSpacingX * column + intersectionSpacingX / 2;
+	float y = intersectionSpacingY * row + intersectionSpacingY / 2;
 	return Vec2(x, y);
 }

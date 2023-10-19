@@ -11,6 +11,7 @@ public:
 	Position(Intersections intersections);
 	Position(const Size& playgroundSize, int numRows, int numCols);
 	Sprite* createCircleSprite(const Color3B& color, float radius);
+	std::vector<Vec2> getNeighbours(int row, int column);
 	
 private:
 	Intersections intersections;
