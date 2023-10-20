@@ -25,6 +25,15 @@
     <ClCompile Include="Position.cpp">
       <Filter>Source Files\Classes\Positioning</Filter>
     </ClCompile>
+    <ClCompile Include="MainMenu.cpp">
+      <Filter>Source Files\Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SplashScene.cpp">
+      <Filter>Source Files\Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Source Files\Classes\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\AppDelegate.h">
@@ -69,6 +78,18 @@
     <ClInclude Include="Position.h">
       <Filter>Source Files\Classes\Positioning</Filter>
     </ClInclude>
+    <ClInclude Include="MainMenu.h">
+      <Filter>Source Files\Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SplashScene.h">
+      <Filter>Source Files\Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Definitions.h">
+      <Filter>Source Files\Classes\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Source Files\Classes\Scene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\CMakeLists.txt" />
@@ -109,9 +130,21 @@
     <Filter Include="Source Files\Classes\Positioning">
       <UniqueIdentifier>{20df7298-4f35-4e3e-a4e1-96ce09677b3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Classes\Scene">
+      <UniqueIdentifier>{7ed80a8f-2cb5-4de1-b87c-f552090cad48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Utils">
+      <UniqueIdentifier>{02c1890a-73c2-4def-9094-ecd8cbcdef44}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Image Include="bin\src\Debug\Resources\textures\backgroundTexture.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="bin\src\Debug\Resources\textures\mainMenuBackground.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="bin\src\Debug\Resources\textures\splashScene.png">
       <Filter>Resources\textures</Filter>
     </Image>
   </ItemGroup>

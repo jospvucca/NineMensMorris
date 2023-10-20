@@ -25,6 +25,7 @@
 #include "AppDelegate.h"
 #include "HelloWorldScene.h"
 #include "../proj.win32/MainScene.h"
+#include "../proj.win32/SplashScene.h"
 
 // #define USE_AUDIO_ENGINE 1
 
@@ -96,11 +97,15 @@ bool AppDelegate::applicationDidFinishLaunching() {
 
     register_all_packages();
 
-    //// create a scene. it's an autorelease object
-    //auto scene = HelloWorld::createScene();
+    //Add resources to fileUtils
+    auto fileUtils = FileUtils::getInstance();
+    std::vector<std::string> searchPaths = fileUtils->getSearchPaths();
+
+    searchPaths.insert(searchPaths.begin(), "textures");
+    fileUtils->setSearchPaths(searchPaths);
 
     // create a scene. it's an autorelease object
-    auto scene = MainScene::create();
+    auto scene = SplashScene::createScene();
 
     // run
     director->runWithScene(scene);
