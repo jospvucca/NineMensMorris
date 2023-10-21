@@ -903,7 +903,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="bin\src\Debug\Resources\textures\1v1.png" />
+    <Image Include="bin\src\Debug\Resources\textures\backButton.png" />
     <Image Include="bin\src\Debug\Resources\textures\backgroundTexture.png" />
+    <Image Include="bin\src\Debug\Resources\textures\tokenPosition.png" />
     <Image Include="bin\src\Debug\Resources\textures\mainMenuBackground.png" />
     <Image Include="bin\src\Debug\Resources\textures\splashScene.png" />
   </ItemGroup>

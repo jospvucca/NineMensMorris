@@ -147,5 +147,14 @@
     <Image Include="bin\src\Debug\Resources\textures\splashScene.png">
       <Filter>Resources\textures</Filter>
     </Image>
+    <Image Include="bin\src\Debug\Resources\textures\1v1.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="bin\src\Debug\Resources\textures\backButton.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
+    <Image Include="bin\src\Debug\Resources\textures\tokenPosition.png">
+      <Filter>Resources\textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

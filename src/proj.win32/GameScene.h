@@ -28,6 +28,7 @@ public:
 	bool isValidMove(int, int);
 	bool isMillFormed(int, int);
 	void EndGame();
+	void TransitionToGameOverScene(const std::string& sceneName);
 
 	// Logic elements
 	cocos2d::Sprite* tokens[24];	// Possible positions

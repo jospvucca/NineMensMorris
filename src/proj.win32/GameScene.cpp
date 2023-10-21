@@ -19,7 +19,6 @@ Scene* GameScene::createScene()
 	scene->addChild(layer);
 
 	return scene;
-
 }
 
 bool GameScene::init()
@@ -62,7 +61,7 @@ bool GameScene::init()
 
 	for (int i = 0; i < 24; i++)
 	{
-		tokens[i] = Sprite::create("res/sp.png");
+		tokens[i] = Sprite::create("tokenPosition.png");		//TODO: create image for a token
 	}
 
 	//	----	----	----	//
@@ -152,81 +151,81 @@ bool GameScene::init()
 	//////////////////////////////
 
 	//	----	Positioning black pieces	----	//
-	black[0] = Sprite::create("res/b.png");
+	black[0] = Sprite::create("blackToken.png");
 	black[0]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y));//done 23
 	this->addChild(black[0], -1);
 
-	black[1] = Sprite::create("res/b.png");
+	black[1] = Sprite::create("blackToken.png");
 	black[1]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y));//done 23
 	this->addChild(black[1], -1);
 
-	black[2] = Sprite::create("res/b.png");
+	black[2] = Sprite::create("blackToken.png");
 	black[2]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y));//done 23
 	this->addChild(black[2], -1);
 	//	----	----	----	----	----	----	//
 
-	black[3] = Sprite::create("res/b.png");
+	black[3] = Sprite::create("blackToken.png");
 	black[3]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
 	this->addChild(black[3], -1);
 
-	black[4] = Sprite::create("res/b.png");
+	black[4] = Sprite::create("blackToken.png");
 	black[4]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
 	this->addChild(black[4], -1);
 
-	black[5] = Sprite::create("res/b.png");
+	black[5] = Sprite::create("blackToken.png");
 	black[5]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
 	this->addChild(black[5], -1);
 	//	----	----	----	----	----	----	//
 
-	black[6] = Sprite::create("res/b.png");
+	black[6] = Sprite::create("blackToken.png");
 	black[6]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
 	this->addChild(black[6], -1);
 
-	black[7] = Sprite::create("res/b.png");
+	black[7] = Sprite::create("blackToken.png");
 	black[7]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
 	this->addChild(black[7], -1);
 
-	black[8] = Sprite::create("res/b.png");
+	black[8] = Sprite::create("blackToken.png");
 	black[8]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
 	this->addChild(black[8], -1);
 	//////////////////////////////////////////////////
 
 	//	----	Positioning white pieces	----	//
-	white[0] = Sprite::create("res/w.png");
+	white[0] = Sprite::create("whiteToken.png");
 	white[0]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y));//done 23
 	this->addChild(white[0], -1);
 
-	white[1] = Sprite::create("res/w.png");
+	white[1] = Sprite::create("whiteToken.png");
 	white[1]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y));//done 23
 	this->addChild(white[1], -1);
 
-	white[2] = Sprite::create("res/w.png");
+	white[2] = Sprite::create("whiteToken.png");
 	white[2]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y));//done 23
 	this->addChild(white[2], -1);
 	//	----	----	----	----	----	----	//
 
-	white[3] = Sprite::create("res/w.png");
+	white[3] = Sprite::create("whiteToken.png");
 	white[3]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
 	this->addChild(white[3], -1);
 
-	white[4] = Sprite::create("res/w.png");
+	white[4] = Sprite::create("whiteToken.png");
 	white[4]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
 	this->addChild(white[4], -1);
 
-	white[5] = Sprite::create("res/w.png");
+	white[5] = Sprite::create("whiteToken.png");
 	white[5]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
 	this->addChild(white[5], -1);
 	//	----	----	----	----	----	----	//
 
-	white[6] = Sprite::create("res/w.png");
+	white[6] = Sprite::create("whiteToken.png");
 	white[6]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
 	this->addChild(white[6], -1);
 
-	white[7] = Sprite::create("res/w.png");
+	white[7] = Sprite::create("whiteToken.png");
 	white[7]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
 	this->addChild(white[7], -1);
 
-	white[8] = Sprite::create("res/w.png");
+	white[8] = Sprite::create("whiteToken.png");
 	white[8]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
 	this->addChild(white[8], -1);
 	//////////////////////////////////////////////////
@@ -247,183 +246,242 @@ bool GameScene::init()
 int hold = 0;		// TODO: this is getting refactored, placed as bool isHeld in .h file
 void GameScene::onTouchEnded(cocos2d::Touch* touch, cocos2d::Event* event)
 {
+	cocos2d::log("onTouchEnded.");
+
+	//Destination
 	Point touchPoint = touch->getLocation();
 
-
+	//position == 0 -> empty, -1 -> black, 1 -> white
+	//isMillFormed -> rules say you cant remove a piece in line
 
 	if (capture)
 	{
-		for (int j = 0; j < 24; j++) //rassembler ceux qu'on ne peut plus capturer
+		for (int j = 0; j < 24; j++) //gather those who cant be captured
 		{
-			if (database[j] != 0 && (moulinformation(j, database[j])))
-				nocapture[j] = 1;
+			if (database[j] != 0 && (isMillFormed(j, database[j])))
+				noCapture[j] = 1;
 		}
 
 		for (int i = 0; i < 24; i++)
 		{
-			if (tokens[i]->getBoundingBox().containsPoint(touchPoint) && database[i] == player && nocapture[i] == 0)
+			if (tokens[i]->getBoundingBox().containsPoint(touchPoint) && database[i] == player && noCapture[i] == 0)
 			{
-				if (player == -1)
-				{
-					for (int k = 0; k < 9; k++)
-					{
-						if (black[k]->getBoundingBox().containsPoint(touchPoint))
-						{
-							auto moveTo = MoveTo::create(0.5, Point(0, 0));
-							black[k]->runAction(moveTo);
-							database[i] = 0;
-							capture = 0;
-						}
+				for (int k = 0; k < 9; k++) {
+					if (player == -1 && black[k]->getBoundingBox().containsPoint(touchPoint)) {
+						MoveTo* moveTo = MoveTo::create(0.5, Point(0, 0));
+						black[k]->runAction(moveTo);
+
+						//This can possibly be outside of the ifs and for(k)
+						database[i] = 0;
+						capture = 0;
 					}
-				}
-				if (player == 1)
-				{
-					for (int k = 0; k < 9; k++)
-					{
-						if (white[k]->getBoundingBox().containsPoint(touchPoint))
-						{
-							auto moveTo = MoveTo::create(0.5, Point(0, 0));
-							white[k]->runAction(moveTo);
-							database[i] = 0;
-							capture = 0;
-						}
+					else if (player == 1 && white[k]->getBoundingBox().containsPoint(touchPoint)) {
+						MoveTo* moveTo = MoveTo::create(0.5, Point(0, 0));
+						white[k]->runAction(moveTo);
+
+						database[i] = 0;
+						capture = 0;
+					}
+					else {
+						cocos2d::log("Error in logic.");
 					}
 				}
 			}
 		}
-		endgame();
+		EndGame();
 	}
 	else {
 		if (times < 18)
 		{
-
-
 			for (int i = 0; i < 24; i++)
 			{
-				if (database[i] == 0 && tokens[i]->getBoundingBox().containsPoint(touchPoint))
-				{
+				if (database[i] == 0 && tokens[i]->getBoundingBox().containsPoint(touchPoint)) {
+					database[i] = player;
+					MoveTo* moveTo = MoveTo::create(0.5, Vec2(tokens[i]->getPosition().x, tokens[i]->getPosition().y));
 
-					if (player == 1)
-					{
-						database[i] = 1;
-						auto moveTo = MoveTo::create(0.5, Vec2(tokens[i]->getPositionX(), tokens[i]->getPositionY()));
-						white[times / 2]->runAction(moveTo);
-						capture = moulinformation(i, player);
-						log("mooooooooolin : %d", moulinformation(i, 1));
-					}
-					if (player == -1)
-					{
-
-						database[i] = -1;
-						auto moveTo = MoveTo::create(0.5, Vec2(tokens[i]->getPositionX(), tokens[i]->getPositionY()));
+					if (player == -1) {
 						black[times / 2]->runAction(moveTo);
-						capture = moulinformation(i, player);
-						log("mooooooooolin : %d", moulinformation(i, -1));
 					}
+					else if (player == 1) {
+						white[times / 2]->runAction(moveTo);
+					}
+					else {
+						cocos2d::log("Error in logic.");
+					}
+
+					capture = isMillFormed(i, player);
+					cocos2d::log("IsMillFormed? -> %d", isMillFormed(i, player));
 					times++;
 					player *= -1;
 				}
 			}
 		}
+		//else if (times == 18)
+		//{
+		//	if (hold)
+		//	{
+		//		// Find the destination where the player wants to move the piece
+		//		int destination = -1;
+		//		for (int i = 0; i < 24; i++) {
+		//			if (database[i] == 0 && tokens[i]->getBoundingBox().containsPoint(touchPoint)) {
+		//				destination = 1;
+		//				break;
+		//			}
+		//		}
 
+		//		//Check if the move is valid or certain conditions are met
+		//		if (destination != -1) {
+		//			bool validMove = isValidMove(source, destination) || (blackPieces == 3 && player == -1) || (whitePieces == 3 && player == 1);
 
+		//			if (database[destination] == 0 && validMove) {
+		//				MoveTo* moveTo = MoveTo::create(0.5, Vec2(tokens[destination]->getPosition().x, tokens[destination]->getPosition().y));
 
-		if (times == 18)
+		//				if (player == -1) {
+		//					black[selected]->runAction(moveTo);
+		//					black[selected]->setTexture("blackToken.png");
+		//				}
+		//				else if (player == 1) {
+		//					white[selected]->runAction(moveTo);
+		//					white[selected]->setTexture("whiteToken.png");
+		//				}
+		//				else {
+		//					cocos2d::log("Error in logic.");
+		//				}
+
+		//				database[source] = 0;
+		//				database[destination] = player;
+		//				hold = 0;
+		//				player *= -1;
+		//				cocos2d::log("IsMillFormed? -> %d", isMillFormed(destination, database[destination]));
+		//				cocos2d::log("%d player: %d", destination, database[destination]);
+		//				capture = isMillFormed(destination, database[destination]);
+		//			}
+		//		}
+		//	}
+
+		//	for (int i = 0; i < 9; i++)
+		//	{
+		//		Sprite** pieceArray;
+		//		if (player == -1) {
+		//			pieceArray = black;
+		//		}
+		//		else if (player == 1) {
+		//			pieceArray = white;
+		//		}
+		//		else {
+		//			cocos2d::log("Error in logic.");
+		//		}
+
+		//		if (pieceArray[i] != 0 && pieceArray[i]->getBoundingBox().containsPoint(touchPoint)) {
+		//			//Reset all textures for pieces
+		//			for (int k = 0; k < 9; k++) {
+		//				string texture;
+		//				if (player == -1)
+		//				{
+		//					texture = "blackToken.png";
+		//				}
+		//				else if (player == 1) {
+		//					texture = "whiteToken.png";
+		//				}
+		//				else {
+		//					cocos2d::log("Error in logic.");
+		//				}
+
+		//				pieceArray[k]->setTexture(texture);
+		//				selected = i;
+		//				pieceArray[selected]->setTexture(texture);	//Possibly not the same texture
+		//				hold = 1;
+		//			}
+		//		}
+		//	}
+		//	if (hold) {
+		//		for (int k = 0; k < 24; k++) {
+		//			if (tokens[k]->getBoundingBox().containsPoint(touchPoint) && database[k] == player) {
+		//				source = k;
+		//			}
+		//		}
+		//	}
+		//}
+		else if (times == 18)
 		{
-
-
 			if (hold)
 			{
+				int destination = -1;
+
 				for (int i = 0; i < 24; i++)
 				{
 					if (database[i] == 0 && tokens[i]->getBoundingBox().containsPoint(touchPoint))
 					{
 						destination = i;
+						break;
 					}
 				}
-				for (int i = 0; i < 24; i++)
-				{
-					if (database[i] == 0 && (validmove(source, destination) || (noir == 3 && player == -1) || (blanc == 3 && player == 1)) && tokens[i]->getBoundingBox().containsPoint(touchPoint))
-					{
 
-						auto moveTo = MoveTo::create(0.5, Vec2(tokens[i]->getPositionX(), tokens[i]->getPositionY()));
-						if (player == -1)
-						{
+				if (destination != -1)
+				{
+					bool validMove = isValidMove(source, destination) || (blackPieces == 3 && player == -1) || (whitePieces == 3 && player == 1);
+
+					if (database[destination] == 0 && validMove)
+					{
+						// Your move logic here
+						MoveTo* moveTo = MoveTo::create(0.5, Vec2(tokens[destination]->getPosition().x, tokens[destination]->getPosition().y));
+
+						if (player == -1) {
 							black[selected]->runAction(moveTo);
-							black[selected]->setTexture("res/b.png");
+							black[selected]->setTexture("blackToken.png");
 						}
-						if (player == 1)
-						{
+						else if (player == 1) {
 							white[selected]->runAction(moveTo);
-							white[selected]->setTexture("res/w.png");
+							white[selected]->setTexture("whiteToken.png");
 						}
+						else {
+							cocos2d::log("Error in logic.");
+						}
+
 						database[source] = 0;
 						database[destination] = player;
 						hold = 0;
 						player *= -1;
-						log("mooooooooolin : %d", moulinformation(destination, database[destination]));
-						log("avec : %d player : %d", destination, database[destination]);
-						capture = moulinformation(destination, database[destination]);
+						capture = isMillFormed(destination, database[destination]);
+					}
+					else
+					{
+						// Handle invalid moves here
+						cocos2d::log("Invalid move or conditions not met.");
 					}
 				}
-			}
-
-
-			for (int i = 0; i < 9; i++)
-			{
-				if (player == -1)
-					if (black[i] != 0 && black[i]->getBoundingBox().containsPoint(touchPoint))
-					{
-						for (int k = 0; k < 9; k++)
-						{
-							black[k]->setTexture("res/b.png");
-						}
-						selected = i;
-						black[selected]->setTexture("res/big_b.png");
-						hold = 1;
-					}
-				if (player == 1)
-					if (white[i] != 0 && white[i]->getBoundingBox().containsPoint(touchPoint))
-					{
-						for (int k = 0; k < 9; k++)
-						{
-							white[k]->setTexture("res/w.png");
-						}
-						selected = i;
-						white[selected]->setTexture("res/big_w.png");
-						hold = 1;
-					}
-			}
-			if (hold)
-				for (int k = 0; k < 24; k++)
+				else
 				{
-					if (tokens[k]->getBoundingBox().containsPoint(touchPoint) && database[k] == player)
-					{
-						source = k;
-					}
+					// Handle the case where no valid destination was found
+					cocos2d::log("No valid destination found.");
 				}
-
-
-
+			}
+			else
+			{
+				// Handle the case where hold is false
+				cocos2d::log("Hold is false.");
+			}
+		}
+		else {
+		cocos2d::log("Error in logic.");
 		}
 	}
 
-
 	log("source : %d destination %d capture %d", source, destination, capture);
-	log("%d %d %d", nocapture[21], nocapture[22], nocapture[23]);
-	log("%d %d %d", nocapture[18], nocapture[19], nocapture[20]);
-	log("%d %d %d", nocapture[15], nocapture[16], nocapture[17]);
-	log("%d %d %d %d %d %d", nocapture[9], nocapture[10], nocapture[11], nocapture[12], nocapture[13], nocapture[14]);
-	log("%d %d %d", nocapture[6], nocapture[7], nocapture[8]);
-	log("%d %d %d", nocapture[3], nocapture[4], nocapture[5]);
-	log("%d %d %d", nocapture[0], nocapture[1], nocapture[2]);
+	log("%d %d %d", noCapture[21], noCapture[22], noCapture[23]);
+	log("%d %d %d", noCapture[18], noCapture[19], noCapture[20]);
+	log("%d %d %d", noCapture[15], noCapture[16], noCapture[17]);
+	log("%d %d %d %d %d %d", noCapture[9], noCapture[10], noCapture[11], noCapture[12], noCapture[13], noCapture[14]);
+	log("%d %d %d", noCapture[6], noCapture[7], noCapture[8]);
+	log("%d %d %d", noCapture[3], noCapture[4], noCapture[5]);
+	log("%d %d %d", noCapture[0], noCapture[1], noCapture[2]);
 
 	for (int j = 0; j < 24; j++)
 	{
-		nocapture[j] = 0;
+		noCapture[j] = 0;
 	}
-	return;
 
+	return;
 }
 
 
@@ -431,13 +489,14 @@ bool GameScene::onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event) {
 	return true;
 }
 
-void GameScene::onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event) {     }
-void GameScene::onTouchCancelled(cocos2d::Touch* touch, cocos2d::Event* event) {     }
+void GameScene::onTouchMoved(cocos2d::Touch* touch, cocos2d::Event* event) { }
+void GameScene::onTouchCancelled(cocos2d::Touch* touch, cocos2d::Event* event) { }
 
-bool GameScene::validmove(int in, int out)
+bool GameScene::isValidMove(int in, int out)
 {
 	if (in == out)
 		return false;
+
 	if (in == 0)
 		return(out == 1 || out == 9);
 	if (in == 1)
@@ -471,7 +530,7 @@ bool GameScene::validmove(int in, int out)
 	if (in == 15)
 		return(out == 11 || out == 16);
 	if (in == 16)
-		return(out == 15 | out == 17 || out == 19);
+		return(out == 15 || out == 17 || out == 19);
 	if (in == 17)
 		return(out == 16 || out == 12);
 	if (in == 18)
@@ -492,10 +551,8 @@ bool GameScene::validmove(int in, int out)
 
 }
 
-bool GameScene::moulinformation(int in, int player)
+bool GameScene::isMillFormed(int in, int player)
 {
-
-
 	if (in == 0)
 		return((database[1] == player && database[2] == player) || (database[9] == player && database[21] == player));
 	if (in == 1)
@@ -546,37 +603,39 @@ bool GameScene::moulinformation(int in, int player)
 		return((database[22] == player && database[21] == player) || (database[14] == player && database[2] == player));
 
 	return false;
-
-
 }
 
-void GameScene::endgame()
+void GameScene::EndGame()
 {
 	if (times == 18)
 	{
+		blackPieces = 0;
+		whitePieces = 0;
 
-		noir = 0;
-		blanc = 0;
-		//game over test
+		//	----	Check if the game is over	----	//
 		for (int i = 0; i < 24; i++)
 		{
-
 			if (database[i] == -1)
-				noir++;
+				blackPieces++;
 			if (database[i] == 1)
-				blanc++;
+				whitePieces++;
 		}
-		if (noir == 2)
-		{
-			auto scene = GameOverScene::createScene();
-			Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
-		}
-		if (blanc == 2)
-		{
-			auto scene = go2::createScene();
-			Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
-		}
-		//end of game over test
 
+		// Game over conditions
+		if (blackPieces == 2)
+		{
+			TransitionToGameOverScene("GameOverSceneBlack");
+		}
+		if (whitePieces == 2)
+		{
+			TransitionToGameOverScene("GameOverSceneWhite");
+		}
+		//////////////////////////////////////////////////
 	}
+}
+
+void GameScene::TransitionToGameOverScene(const std::string& sceneName)
+{
+	auto scene = Scene::create();
+	Director::getInstance()->replaceScene(TransitionFade::create(TRANSITION_TIME, scene));
 }
