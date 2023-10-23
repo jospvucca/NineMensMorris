@@ -103,6 +103,7 @@
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;COCOS2D_DEBUG=1;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;CC_STATIC;LWS_WITH_LIBUV;CMAKE_INTDIR="Debug"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;COCOS2D_DEBUG=1;_WIN32;UNICODE;_UNICODE;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;CC_STATIC;LWS_WITH_LIBUV;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
@@ -809,13 +810,20 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BoardManagement.cpp" />
     <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="GameStateMachine.cpp" />
     <ClCompile Include="Intersections.cpp" />
     <ClCompile Include="MainMenu.cpp" />
-    <ClCompile Include="MainScene.cpp" />
+    <ClCompile Include="Piece.cpp" />
+    <ClCompile Include="PlacementState.cpp" />
+    <ClCompile Include="Player.cpp" />
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="SplashScene.cpp" />
+    <ClCompile Include="TouchManagement.cpp" />
     <ClInclude Include="BackgroundLayer.h" />
+    <ClInclude Include="BaseState.h" />
+    <ClInclude Include="BoardManagement.h" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\AppDelegate.h" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Classes\HelloWorldScene.h" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\proj.win32\main.h" />
@@ -826,11 +834,15 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\proj.win32\main.cpp" />
     <ClInclude Include="Definitions.h" />
     <ClInclude Include="GameScene.h" />
+    <ClInclude Include="GameStateMachine.h" />
     <ClInclude Include="Intersections.h" />
     <ClInclude Include="MainMenu.h" />
-    <ClInclude Include="MainScene.h" />
+    <ClInclude Include="Piece.h" />
+    <ClInclude Include="PlacementState.h" />
+    <ClInclude Include="Player.h" />
     <ClInclude Include="Position.h" />
     <ClInclude Include="SplashScene.h" />
+    <ClInclude Include="TouchManagement.h" />
     <ResourceCompile Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\proj.win32\game.rc" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Resources\CloseNormal.png" />
     <ClInclude Include="C:\Users\JV\Documents\Cocos\Projects\NineMensMorris\src\Resources\CloseSelected.png" />

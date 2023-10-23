@@ -16,13 +16,7 @@
     <ClCompile Include="BackgroundLayer.cpp">
       <Filter>Source Files\Classes\Background</Filter>
     </ClCompile>
-    <ClCompile Include="MainScene.cpp">
-      <Filter>Source Files\Classes\Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="Intersections.cpp">
-      <Filter>Source Files\Classes\Positioning</Filter>
-    </ClCompile>
-    <ClCompile Include="Position.cpp">
       <Filter>Source Files\Classes\Positioning</Filter>
     </ClCompile>
     <ClCompile Include="MainMenu.cpp">
@@ -33,6 +27,27 @@
     </ClCompile>
     <ClCompile Include="GameScene.cpp">
       <Filter>Source Files\Classes\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateMachine.cpp">
+      <Filter>Source Files\Classes\Management</Filter>
+    </ClCompile>
+    <ClCompile Include="PlacementState.cpp">
+      <Filter>Source Files\Classes\Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Source Files\Classes\Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Piece.cpp">
+      <Filter>Source Files\Classes\Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp">
+      <Filter>Source Files\Classes\Elements</Filter>
+    </ClCompile>
+    <ClCompile Include="BoardManagement.cpp">
+      <Filter>Source Files\Classes\Management</Filter>
+    </ClCompile>
+    <ClCompile Include="TouchManagement.cpp">
+      <Filter>Source Files\Classes\Management</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -69,13 +84,7 @@
     <ClInclude Include="BackgroundLayer.h">
       <Filter>Source Files\Classes\Background</Filter>
     </ClInclude>
-    <ClInclude Include="MainScene.h">
-      <Filter>Source Files\Classes\Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="Intersections.h">
-      <Filter>Source Files\Classes\Positioning</Filter>
-    </ClInclude>
-    <ClInclude Include="Position.h">
       <Filter>Source Files\Classes\Positioning</Filter>
     </ClInclude>
     <ClInclude Include="MainMenu.h">
@@ -89,6 +98,30 @@
     </ClInclude>
     <ClInclude Include="GameScene.h">
       <Filter>Source Files\Classes\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameStateMachine.h">
+      <Filter>Source Files\Classes\Management</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseState.h">
+      <Filter>Source Files\Classes\Management</Filter>
+    </ClInclude>
+    <ClInclude Include="PlacementState.h">
+      <Filter>Source Files\Classes\Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Source Files\Classes\Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Piece.h">
+      <Filter>Source Files\Classes\Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h">
+      <Filter>Source Files\Classes\Elements</Filter>
+    </ClInclude>
+    <ClInclude Include="BoardManagement.h">
+      <Filter>Source Files\Classes\Management</Filter>
+    </ClInclude>
+    <ClInclude Include="TouchManagement.h">
+      <Filter>Source Files\Classes\Management</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -121,9 +154,6 @@
     <Filter Include="Source Files\Classes\Background">
       <UniqueIdentifier>{54c3963e-23ff-453c-92a5-ebbb80680296}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Classes\Scenes">
-      <UniqueIdentifier>{b9375341-3fe4-49c5-838f-54ede59ea38f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resources\textures">
       <UniqueIdentifier>{0873bb9c-929d-42b6-831e-aada6cb703a5}</UniqueIdentifier>
     </Filter>
@@ -135,6 +165,12 @@
     </Filter>
     <Filter Include="Source Files\Classes\Utils">
       <UniqueIdentifier>{02c1890a-73c2-4def-9094-ecd8cbcdef44}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Management">
+      <UniqueIdentifier>{b824dc9b-f2da-40a0-af17-4f6e7357efc1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Classes\Elements">
+      <UniqueIdentifier>{cc932f5a-bb15-4a2b-b203-0dd0978cfc1c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

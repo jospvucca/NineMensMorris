@@ -1,4 +1,10 @@
 #include "GameScene.h"
+#include "GameStateMachine.h"
+#include "PlacementState.h"
+#include "BoardManagement.h"
+#include "TouchManagement.h"
+#include "Player.h"
+
 #include "MainMenu.h"
 #include"definitions.h"
 
@@ -28,6 +34,17 @@ bool GameScene::init()
 		return false;
 	}
 
+	//	----	Players	----	//
+	Player black = Player::Player(-1);
+	Player white = Player::Player(1);
+	//////////////////////////////
+
+	//	----	Game State Machine	----	//
+	PlacementState placementState;
+	GameStateMachine gameStateMachine(placementState);
+	gameStateMachine.Initialize(black, white);
+	//////////////////////////////////////////
+
 	//	----	Background	----	//
 	Size visibleSize = Director::getInstance()->getVisibleSize();
 	Vec2 origin = Director::getInstance()->getVisibleOrigin();
@@ -42,6 +59,15 @@ bool GameScene::init()
 	background->setScaleY(rY);
 	//////////////////////////////////
 
+	//	----	Positions	----	//
+	BoardManagement boardManager = BoardManagement::BoardManagement();
+	std::vector<std::unique_ptr<Position>> positions = boardManager.createPositions(visibleSize, origin);
+	//////////////////////////////////
+
+	//	----	Touch Manager	----	//
+	TouchManagement* touchManager = TouchManagement::getInstance(boardManager);
+	//////////////////////////////////////
+	
 	//	----	Back button	----	//
 	auto backButton = cocos2d::ui::Button::create("backButton.png");
 	backButton->setPosition(Point(visibleSize.width / 1.06 + origin.x, visibleSize.height / 1.08 + origin.y));
@@ -59,176 +85,85 @@ bool GameScene::init()
 	this->addChild(backButton);
 	//////////////////////////////////
 
-	for (int i = 0; i < 24; i++)
-	{
-		tokens[i] = Sprite::create("tokenPosition.png");		//TODO: create image for a token
-	}
+	////	----	Positioning black pieces	----	//
+	//black[0] = Sprite::create("blackToken.png");
+	//black[0]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y));//done 23
+	//this->addChild(black[0], -1);
 
-	//	----	----	----	//
-	tokens[0]->setPosition(Point(visibleSize.width / 3.8 + origin.x, visibleSize.height / 10 + origin.y));//done 0
-	this->addChild(tokens[0], -1);
+	//black[1] = Sprite::create("blackToken.png");
+	//black[1]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y));//done 23
+	//this->addChild(black[1], -1);
 
-	tokens[1]->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 10 + origin.y));//done 1
-	this->addChild(tokens[1], -1);
+	//black[2] = Sprite::create("blackToken.png");
+	//black[2]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y));//done 23
+	//this->addChild(black[2], -1);
+	////	----	----	----	----	----	----	//
 
-	tokens[2]->setPosition(Point(visibleSize.width / 1.355 + origin.x, visibleSize.height / 10 + origin.y));//done 2
-	this->addChild(tokens[2], -1);
-	//////////////////////////////
+	//black[3] = Sprite::create("blackToken.png");
+	//black[3]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
+	//this->addChild(black[3], -1);
 
-	//	----	----	----	//
-	tokens[3]->setPosition(Point(visibleSize.width / 2.85 + origin.x, visibleSize.height / 4 + origin.y));//done 3
-	this->addChild(tokens[3], -1);
+	//black[4] = Sprite::create("blackToken.png");
+	//black[4]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
+	//this->addChild(black[4], -1);
 
-	tokens[4]->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 4 + origin.y));//done 4
-	this->addChild(tokens[4], -1);
+	//black[5] = Sprite::create("blackToken.png");
+	//black[5]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
+	//this->addChild(black[5], -1);
+	////	----	----	----	----	----	----	//
 
-	tokens[5]->setPosition(Point(visibleSize.width / 1.539 + origin.x, visibleSize.height / 4 + origin.y));//done 5
-	this->addChild(tokens[5], -1);
-	//////////////////////////////
+	//black[6] = Sprite::create("blackToken.png");
+	//black[6]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
+	//this->addChild(black[6], -1);
 
-	//	----	----	----	//
-	tokens[6]->setPosition(Point(visibleSize.width / 2.33 + origin.x, visibleSize.height / 2.55 + origin.y));//done 6
-	this->addChild(tokens[6], -1);
+	//black[7] = Sprite::create("blackToken.png");
+	//black[7]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
+	//this->addChild(black[7], -1);
 
-	tokens[7]->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 2.55 + origin.y));//done 7
-	this->addChild(tokens[7], -1);
+	//black[8] = Sprite::create("blackToken.png");
+	//black[8]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
+	//this->addChild(black[8], -1);
+	////////////////////////////////////////////////////
 
-	tokens[8]->setPosition(Point(visibleSize.width / 1.734 + origin.x, visibleSize.height / 2.55 + origin.y));//done 8
-	this->addChild(tokens[8], -1);
-	//////////////////////////////
+	////	----	Positioning white pieces	----	//
+	//white[0] = Sprite::create("whiteToken.png");
+	//white[0]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y));//done 23
+	//this->addChild(white[0], -1);
 
-	//	----	----	----	//
-	tokens[9]->setPosition(Point(visibleSize.width / 3.8 + origin.x, visibleSize.height / 1.92 + origin.y));//done 9
-	this->addChild(tokens[9], -1);
+	//white[1] = Sprite::create("whiteToken.png");
+	//white[1]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y));//done 23
+	//this->addChild(white[1], -1);
 
-	tokens[10]->setPosition(Point(visibleSize.width / 2.85 + origin.x, visibleSize.height / 1.92 + origin.y));//done 10
-	this->addChild(tokens[10], -1);
+	//white[2] = Sprite::create("whiteToken.png");
+	//white[2]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y));//done 23
+	//this->addChild(white[2], -1);
+	////	----	----	----	----	----	----	//
 
-	tokens[11]->setPosition(Point(visibleSize.width / 2.33 + origin.x, visibleSize.height / 1.92 + origin.y));//done 11
-	this->addChild(tokens[11], -1);
+	//white[3] = Sprite::create("whiteToken.png");
+	//white[3]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
+	//this->addChild(white[3], -1);
 
-	tokens[12]->setPosition(Point(visibleSize.width / 1.734 + origin.x, visibleSize.height / 1.92 + origin.y));//done 12
-	this->addChild(tokens[12], -1);
+	//white[4] = Sprite::create("whiteToken.png");
+	//white[4]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
+	//this->addChild(white[4], -1);
 
-	tokens[13]->setPosition(Point(visibleSize.width / 1.53 + origin.x, visibleSize.height / 1.92 + origin.y));//done 13
-	this->addChild(tokens[13], -1);
+	//white[5] = Sprite::create("whiteToken.png");
+	//white[5]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
+	//this->addChild(white[5], -1);
+	////	----	----	----	----	----	----	//
 
-	tokens[14]->setPosition(Point(visibleSize.width / 1.355 + origin.x, visibleSize.height / 1.92 + origin.y));//done 14
-	this->addChild(tokens[14], -1);
-	//////////////////////////////
+	//white[6] = Sprite::create("whiteToken.png");
+	//white[6]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
+	//this->addChild(white[6], -1);
 
-	//	----	----	----	//
-	tokens[15]->setPosition(Point(visibleSize.width / 2.33 + origin.x, visibleSize.height / 1.55 + origin.y));//done 15
-	this->addChild(tokens[15], -1);
+	//white[7] = Sprite::create("whiteToken.png");
+	//white[7]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
+	//this->addChild(white[7], -1);
 
-	tokens[16]->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 1.55 + origin.y));//done 16
-	this->addChild(tokens[16], -1);
-
-	tokens[17]->setPosition(Point(visibleSize.width / 1.734 + origin.x, visibleSize.height / 1.55 + origin.y));//done 17
-	this->addChild(tokens[17], -1);
-	//////////////////////////////
-
-	//	----	----	----	//
-	tokens[18]->setPosition(Point(visibleSize.width / 2.85 + origin.x, visibleSize.height / 1.255 + origin.y));//done 18
-	this->addChild(tokens[18], -1);
-
-	tokens[19]->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 1.255 + origin.y));//done 19
-	this->addChild(tokens[19], -1);
-
-	tokens[20]->setPosition(Point(visibleSize.width / 1.539 + origin.x, visibleSize.height / 1.255 + origin.y));//done 20
-	this->addChild(tokens[20], -1);
-	//////////////////////////////
-	
-	//	----	----	----	//
-	tokens[21]->setPosition(Point(visibleSize.width / 3.8 + origin.x, visibleSize.height / 1.078 + origin.y));//done 21
-	this->addChild(tokens[21], -1);
-
-	tokens[22]->setPosition(Point(visibleSize.width / 2 + origin.x, visibleSize.height / 1.078 + origin.y));//done 22
-	this->addChild(tokens[22], -1);
-
-	tokens[23]->setPosition(Point(visibleSize.width / 1.355 + origin.x, visibleSize.height / 1.078 + origin.y));//done 23
-	this->addChild(tokens[23], -1);
-	//////////////////////////////
-
-	//	----	Positioning black pieces	----	//
-	black[0] = Sprite::create("blackToken.png");
-	black[0]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y));//done 23
-	this->addChild(black[0], -1);
-
-	black[1] = Sprite::create("blackToken.png");
-	black[1]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y));//done 23
-	this->addChild(black[1], -1);
-
-	black[2] = Sprite::create("blackToken.png");
-	black[2]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y));//done 23
-	this->addChild(black[2], -1);
-	//	----	----	----	----	----	----	//
-
-	black[3] = Sprite::create("blackToken.png");
-	black[3]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
-	this->addChild(black[3], -1);
-
-	black[4] = Sprite::create("blackToken.png");
-	black[4]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
-	this->addChild(black[4], -1);
-
-	black[5] = Sprite::create("blackToken.png");
-	black[5]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width));//done 23
-	this->addChild(black[5], -1);
-	//	----	----	----	----	----	----	//
-
-	black[6] = Sprite::create("blackToken.png");
-	black[6]->setPosition(Point(visibleSize.width / 5.55 + origin.x, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
-	this->addChild(black[6], -1);
-
-	black[7] = Sprite::create("blackToken.png");
-	black[7]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
-	this->addChild(black[7], -1);
-
-	black[8] = Sprite::create("blackToken.png");
-	black[8]->setPosition(Point(visibleSize.width / 5.55 + origin.x - black[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - black[1]->getContentSize().width * 2));//done 23
-	this->addChild(black[8], -1);
-	//////////////////////////////////////////////////
-
-	//	----	Positioning white pieces	----	//
-	white[0] = Sprite::create("whiteToken.png");
-	white[0]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y));//done 23
-	this->addChild(white[0], -1);
-
-	white[1] = Sprite::create("whiteToken.png");
-	white[1]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y));//done 23
-	this->addChild(white[1], -1);
-
-	white[2] = Sprite::create("whiteToken.png");
-	white[2]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y));//done 23
-	this->addChild(white[2], -1);
-	//	----	----	----	----	----	----	//
-
-	white[3] = Sprite::create("whiteToken.png");
-	white[3]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
-	this->addChild(white[3], -1);
-
-	white[4] = Sprite::create("whiteToken.png");
-	white[4]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
-	this->addChild(white[4], -1);
-
-	white[5] = Sprite::create("whiteToken.png");
-	white[5]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width));//done 23
-	this->addChild(white[5], -1);
-	//	----	----	----	----	----	----	//
-
-	white[6] = Sprite::create("whiteToken.png");
-	white[6]->setPosition(Point(visibleSize.width / 1.08 + origin.x, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
-	this->addChild(white[6], -1);
-
-	white[7] = Sprite::create("whiteToken.png");
-	white[7]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
-	this->addChild(white[7], -1);
-
-	white[8] = Sprite::create("whiteToken.png");
-	white[8]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
-	this->addChild(white[8], -1);
-	//////////////////////////////////////////////////
+	//white[8] = Sprite::create("whiteToken.png");
+	//white[8]->setPosition(Point(visibleSize.width / 1.08 + origin.x - white[1]->getContentSize().width * 2, visibleSize.height / 2 + origin.y - white[1]->getContentSize().width * 2));//done 23
+	//this->addChild(white[8], -1);
+	////////////////////////////////////////////////////
 
 	//	----	Event handling	----	//
 	listener = EventListenerTouchOneByOne::create();

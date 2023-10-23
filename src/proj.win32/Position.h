@@ -3,18 +3,25 @@
 #define __POSITION_H__
 
 #include "cocos2d.h"
-#include "Intersections.h"
-using namespace cocos2d;
+#include "Piece.h"
+#include <optional>
 
-class Position {
+class Position : cocos2d::Sprite {
 public:
-	Position(Intersections intersections);
-	Position(const Size& playgroundSize, int numRows, int numCols);
-	Sprite* createCircleSprite(const Color3B& color, float radius);
-	std::vector<Vec2> getNeighbours(int row, int column);
-	
+	Position(cocos2d::Vec2& screenPosition, cocos2d::Vec2& matrixPosition);
+	void setPiece(Piece piece);
+	void clearPiece();
+	bool hasPiece() const;
+	std::vector<Position> createPositions(cocos2d::Size& visibleSize, cocos2d::Vec2& origin);	//Should not be placed here but it is for now
+	cocos2d::Vec2 getScreenPosition();
+
+	bool onTouchBegan(cocos2d::Touch* touch, cocos2d::Event* event);
+
 private:
-	Intersections intersections;
+	std::optional<Piece> piece = std::nullopt;
+	std::string emptyTexture;
+	cocos2d::Vec2 screenPosition;
+	cocos2d::Vec2 matrixPosition;
 };
 
 #endif // !__POSITION_H__
